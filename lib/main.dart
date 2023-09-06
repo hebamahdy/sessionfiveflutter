@@ -31,8 +31,62 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+     // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyExpandedWidget(),
     );
+  }
+}
+
+class MyExpandedWidget extends StatelessWidget {
+  const MyExpandedWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        // TRY THIS: Try changing the color here to a specific color (to
+        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+        // change color while the other colors stay the same.
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text('MyExpandedWidget'),
+      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              color: Colors.blueGrey,
+              child: Text('A'),
+            ),
+          ),
+          Expanded(
+            flex:3,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              color: Colors.yellow,
+              child: Text('B'),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              color: Colors.red,
+              child: Text('C'),
+            ),
+          )
+        ],
+      )
+      // This trailing comma makes auto-formatting nicer for build methods.
+    );
+
+
+
   }
 }
 
@@ -56,6 +110,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
 
   void _incrementCounter() {
     setState(() {
