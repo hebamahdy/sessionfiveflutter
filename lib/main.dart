@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: true,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -65,7 +66,7 @@ class MyExpandedWidget extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex:3,
+            flex: 3,
             child: Container(
               padding: EdgeInsets.all(10),
               color: Colors.yellow,
@@ -82,6 +83,7 @@ class MyExpandedWidget extends StatelessWidget {
           )
         ],
       )
+
       // This trailing comma makes auto-formatting nicer for build methods.
     );
 
