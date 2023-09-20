@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sessionfiveflutter/assets_images.dart';
 
 void main() => runApp(const MyProfile());
@@ -88,16 +89,11 @@ class MyStatefullProfile extends StatefulWidget {
 }
 
 class _MyStatefullProfileState extends State<MyStatefullProfile> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      child: const Text('Call Me'),
-      onPressed: () {
-        print(nameController.text);
-        print(passwordController.text);
-      },
+      child: const Text('Contact Me WhatsApp'),
+        onPressed: () => context.go('/details')
     );
   }
 }
